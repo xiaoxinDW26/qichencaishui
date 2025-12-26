@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专业代理记账 - 省心省力 启辰无忧</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        // Tailwind 自定义配置
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#6B7280',
+                        light: '#F9FAFB',
+                        dark: '#1F2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(22, 93, 255, 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-primary font-bold text-2xl flex items-center">
+                <!-- 替换为外部图片logo - 核心修改点1 -->
+                <img src="https://youke2.picui.cn/s1/2025/12/25/694d234db316d.png" alt="启辰logo" class="w-20 h-20 rounded-md mr-2 object-contain">
+                <span>启辰财税</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#intro" class="text-secondary hover:text-primary transition-colors">关于记账</a>
+                <a href="#services" class="text-secondary hover:text-primary transition-colors">服务价格</a>
+                <a href="#contact" class="text-secondary hover:text-primary transition-colors">联系我们</a>
+            </nav>
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-secondary text-xl" id="menuBtn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div class="md:hidden hidden bg-white w-full shadow-lg absolute" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-4">
+                <a href="#intro" class="text-secondary hover:text-primary py-2 transition-colors">关于记账</a>
+                <a href="#services" class="text-secondary hover:text-primary py-2 transition-colors">服务价格</a>
+                <a href="#contact" class="text-secondary hover:text-primary py-2 transition-colors">联系我们</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-28 pb-16 bg-primary/5">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold text-primary mb-4 text-shadow">
+                专业代理记账 财税无忧
+            </h1>
+            <p class="text-[clamp(1rem,2vw,1.25rem)] text-secondary max-w-3xl mx-auto mb-8">
+                专注中小企业财税服务，让您省心、省力、省钱，专注核心业务发展
+            </p>
+            <a href="#contact" class="bg-primary text-white px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-lg">
+                立即咨询 <i class="fa fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+<!-- 代理记账介绍模块 -->
+<section id="intro" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">什么是代理记账？</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-light rounded-xl p-8 shadow-sm mb-8">
+                <p class="text-secondary text-lg mb-4">
+                    代理记账是指企业将本公司的会计核算、记账、报税等一系列的工作全部委托给专业记账公司完成，本企业只设立出纳人员，负责日常货币收支业务和财产保管等工作。
+                </p>
+                <p class="text-secondary text-lg">
+                    代理记账是一种会计解决方案，为企业提供基础会计服务。中小企业和机构选择代理记账，能够在降低本单位开支、节约会计成本的同时，充分发挥财务公司的会计团队专业经验和熟悉财税政策、法规等优势，用足财税政策，降低财税风险，轻松应对各种监督检查，享受高水平专业化的会计全程服务。
+                </p>
+            </div>
+
+            <div class="mb-0">
+                <div class="bg-light rounded-xl p-4 shadow-sm">
+                    <div class="aspect-video w-full rounded-lg overflow-hidden">
+                        <video controls loop autoplay muted class="w-full h-full object-cover">
+                            <source src="logo.mp4" type="video/mp4">
+                            您的浏览器不支持HTML5视频播放，请升级浏览器后重试。
+                        </video>
+
+                        <!-- <iframe 
+                            src="https://player.douyin.com/video/xxxxxx" 
+                            frameborder="0" 
+                            allowfullscreen
+                            class="w-full h-full"
+                        ></iframe> -->
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-semibold text-dark mb-6">选择我们的核心优势</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex items-start card-hover bg-light p-6 rounded-lg shadow-sm">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fa fa-check-circle text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-dark mb-2">专业团队</h4>
+                        <p class="text-secondary">资深会计师团队，持证上岗，多年财税实操经验</p>
+                    </div>
+                </div>
+                <div class="flex items-start card-hover bg-light p-6 rounded-lg shadow-sm">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fa fa-shield text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-dark mb-2">安全保密</h4>
+                        <p class="text-secondary">严格保密制度，签订正规合同，保障企业信息安全</p>
+                    </div>
+                </div>
+                <div class="flex items-start card-hover bg-light p-6 rounded-lg shadow-sm">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fa fa-clock-o text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-dark mb-2">高效准时</h4>
+                        <p class="text-secondary">按时完成记账报税，避免逾期产生罚款和信用影响</p>
+                    </div>
+                </div>
+                <div class="flex items-start card-hover bg-light p-6 rounded-lg shadow-sm">
+                    <div class="bg-primary/10 p-3 rounded-full mr-4">
+                        <i class="fa fa-money text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-dark mb-2">费用透明</h4>
+                        <p class="text-secondary">无隐形收费，价格合理，比聘请专职会计更省钱</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 业务价格模块 -->
+<section id="services" class="py-16 bg-primary/5">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">服务项目 & 价格</h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+            <p class="text-secondary mt-4 max-w-2xl mx-auto">
+                我们提供多种记账套餐，满足不同企业的需求，价格透明，无隐形收费
+            </p>
+        </div>
+
+        <!-- 新业务卡片列表 - 适配原有3列布局，超出部分自动换行 -->
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- 业务1 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">全国代理记账（小规模/个体户）</h3>
+                    <p class="text-secondary mt-2 text-sm">年收入<50万</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥298</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥2239</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务2 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">小规模个体户零申报代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">无收入流水及工资</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥99</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥700</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务3 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">一般纳税人零申报代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">无收入流水及工资</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥298</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥900</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务4 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">小规模企业代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">年收入50~100万（不限开票）</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥798</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥5600</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务5 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">一般纳税人企业代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">年收入<50万（不限开票）</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥799</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥3300</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务6 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">小规模企业代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">年收入100~200万</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥1999</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥3600</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务7 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">小规模企业代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">年收入200万以上</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥2999</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥4800</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务8 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">一般纳税人企业代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">年收入50~200万</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥1999</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥3600</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务9 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">一般纳税人企业代理记账</h3>
+                    <p class="text-secondary mt-2 text-sm">年收入200万以上</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥3999</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥6000</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务10 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">工商变更</h3>
+                    <p class="text-secondary mt-2 text-sm">经营范围/注册资金/法人/名称</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥490</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥500</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务11 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">商标注册</h3>
+                    <p class="text-secondary mt-2 text-sm">直播专享</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥500</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥1600</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务12 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">税务注销</h3>
+                    <p class="text-secondary mt-2 text-sm">企业注销</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥666</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥2500</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+
+            <!-- 业务13 -->
+            <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                <div class="bg-primary/10 p-6 text-center">
+                    <h3 class="text-lg font-bold text-primary">营业执照注销</h3>
+                    <p class="text-secondary mt-2 text-sm">全国个体/公司</p>
+                    <div class="mt-4 flex flex-col items-center">
+                        <span class="text-3xl font-bold text-dark">¥500</span>
+                        <span class="text-secondary text-sm line-through mt-1">原价 ¥1600</span>
+                    </div>
+                </div>
+                <div class="px-6 pb-6 mt-4">
+                    <a href="#contact" class="block w-full py-2 text-center bg-primary/10 text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-medium">
+                        选择此服务
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- 联系方式模块 -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.5rem,3vw,2.5rem)] font-bold text-dark mb-4">联系我们</h2>
+                <div class="w-20 h-1 bg-primary mx-auto"></div>
+                <p class="text-secondary mt-4 max-w-2xl mx-auto">
+                    如有任何疑问或需求，欢迎随时联系我们，我们将尽快回复您
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <!-- 联系信息 -->
+                <div class="bg-light rounded-xl p-8 shadow-sm">
+                    <h3 class="text-xl font-semibold text-dark mb-6">联系方式</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fa fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-dark">咨询电话</h4>
+                                <p class="text-secondary mt-1">182-5985-8639</p>
+                                <p class="text-secondary">130-1568-1681</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fa fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-dark">电子邮箱</h4>
+                                <p class="text-secondary mt-1">qc666888@qccs.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fa fa-map-marker text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-dark">公司地址</h4>
+                                <p class="text-secondary mt-1">厦门市湖里区东黄路213-219号海西金融广场B栋1802-1</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                <i class="fa fa-clock-o text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-dark">工作时间</h4>
+                                <p class="text-secondary mt-1">周一至周五: 14:25 - 21:00</p>
+                                <p class="text-secondary">周六: 9:00 - 12:00（节假日除外）</p>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- 社交媒体 -->
+<div class="mt-8">
+    <h4 class="font-medium text-dark mb-4">关注我们</h4>
+    <div class="flex space-x-4">
+        <!-- 微信（添加跳转图片路径，通常为微信二维码图片） -->
+        <a href="https://youke2.picui.cn/s1/2025/12/26/694e2aba5a9e3.jpg" target="_blank" rel="noopener noreferrer" 
+           class="bg-primary/10 w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+            <i class="fa fa-weixin"></i>
+        </a>
+        <!-- 抖音（添加跳转主页链接） -->
+        <a href="https://www.douyin.com/user/MS4wLjABAAAApvdfu8THK6h04lNITOOEPB8Rift8mKdOLtn3X0MnvjU?from_tab_name=main" target="_blank" rel="noopener noreferrer" 
+           class="bg-primary/10 w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors relative">
+            <!-- 抖音图标主体 -->
+            <div class="w-5 h-5 rounded-full border-2 border-current relative overflow-hidden">
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-2 h-4 bg-current rounded-r-full"></div>
+                <div class="absolute bottom-1 right-1 w-1.5 h-1.5 rounded-full bg-white"></div>
+            </div>
+        </a>
+        <!-- 电话（保留拨号链接） -->
+        <a href="tel:18259858639" class="bg-primary/10 w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-colors">
+            <i class="fa fa-phone"></i>
+        </a>
+    </div>
+</div>
+
+
+                <!-- 咨询表单 -->
+                <div class="bg-light rounded-xl p-8 shadow-sm">
+                    <h3 class="text-xl font-semibold text-dark mb-6">在线咨询</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-secondary mb-2">姓名</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的姓名">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-secondary mb-2">电话</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的联系电话">
+                        </div>
+                        <div>
+                            <label for="company" class="block text-secondary mb-2">公司名称</label>
+                            <input type="text" id="company" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的公司名称">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-secondary mb-2">感兴趣的服务</label>
+                            <select id="service" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary">
+                                <option value="">请选择</option>
+                                <option value="basic">基础记账套餐</option>
+                                <option value="standard">标准记账套餐</option>
+                                <option value="custom">企业定制套餐</option>
+                                <option value="other">其他增值服务</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-secondary mb-2">留言内容</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" placeholder="请输入您的咨询内容"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors shadow-md">
+                            提交咨询 <i class="fa fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <img src="https://youke2.picui.cn/s1/2025/12/25/694d234db316d.png" alt="财税logo" class="w-10 h-10 rounded-md mr-2 object-contain">
+                        启辰财税
+                    </h3>
+                    <p class="text-gray-400 mb-4">
+                        专业代理记账服务，让财税管理更简单
+                    </p>
+                    <div class="flex space-x-4">
+    <a href="https://youke2.picui.cn/s1/2025/12/26/694e2aba5a9e3.jpg" target="_blank" rel="noopener noreferrer" 
+       class="text-gray-400 hover:text-white transition-colors">
+        <i class="fa fa-weixin text-xl"></i>
+    </a>
+    <a href="https://www.douyin.com/user/MS4wLjABAAAApvdfu8THK6h04lNITOOEPB8Rift8mKdOLtn3X0MnvjU?from_tab_name=main" target="_blank" rel="noopener noreferrer" 
+       class="text-gray-400 hover:text-white transition-colors relative flex items-center justify-center w-6 h-6">
+        <div class="w-4 h-4 rounded-full border-2 border-current relative overflow-hidden">
+            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1.5 h-3 bg-current rounded-r-full"></div>
+            <div class="absolute bottom-0.5 right-0.5 w-1 h-1 rounded-full bg-white"></div>
+        </div>
+    </a>
+    <a href="tel:18259858639" class="text-gray-400 hover:text-white transition-colors">
+        <i class="fa fa-phone text-xl"></i>
+    </a>
+</div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">快速链接</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#intro" class="text-gray-400 hover:text-white transition-colors">关于启辰</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition-colors">服务价格</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">联系我们</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">联系电话</h3>
+                    <p class="text-gray-400 mb-2">182-5985-8639</p>
+                    <p class="text-gray-400">130-1568-1681</p>
+                    <h3 class="text-lg font-semibold mb-4 mt-4">电子邮箱</h3>
+                    <p class="text-gray-400">qc666888@qccs.com</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>© 2025 启辰财税 版权所有 | 营业执照：XXXXXXXXXXXXXXX</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // 移动端菜单切换
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // 关闭移动端菜单
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 返回顶部按钮
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.remove('opacity-0', 'invisible');
+                backToTopBtn.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'invisible');
+                backToTopBtn.classList.remove('opacity-100', 'visible');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 导航栏滚动效果
+        const header = document.querySelector('header');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-3');
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.add('py-3');
+                header.classList.remove('py-2');
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // 表单提交
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('您的咨询已提交，我们将尽快与您联系！');
+            form.reset();
+        });
+    </script>
+</body>
+</html>
